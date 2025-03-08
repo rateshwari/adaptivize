@@ -80,21 +80,22 @@ const IndustryInsights = () => {
                       boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)'
                     }}
                   />
-                </ResponsiveContainer>
-              </div>
-              
-              <div className="flex flex-wrap justify-center gap-2 pt-2">
-                {skillDemandData.map((entry, index) => (
-                  <div key={entry.name} className="flex items-center text-xs">
-                    <span 
-                      className="inline-block w-3 h-3 rounded-full mr-1"
-                      style={{ backgroundColor: COLORS[index % COLORS.length] }}
-                    ></span>
-                    {entry.name}
-                  </div>
-                ))}
-              </div>
+                </PieChart>
+              </ResponsiveContainer>
             </div>
+            
+            <div className="flex flex-wrap justify-center gap-2 pt-2">
+              {skillDemandData.map((entry, index) => (
+                <div key={entry.name} className="flex items-center text-xs">
+                  <span 
+                    className="inline-block w-3 h-3 rounded-full mr-1"
+                    style={{ backgroundColor: COLORS[index % COLORS.length] }}
+                  ></span>
+                  {entry.name}
+                </div>
+              ))}
+            </div>
+          </div>
           
           <div>
             <h4 className="font-medium text-sm text-gray-600 dark:text-gray-300 mb-4">Market Trends</h4>

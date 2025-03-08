@@ -4,7 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
-import { Header } from "@/components/layout/Header";
+import Header from "@/components/layout/Header";
 import Sidebar from "@/components/layout/Sidebar";
 
 const Settings = () => {

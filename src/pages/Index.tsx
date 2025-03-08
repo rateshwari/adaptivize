@@ -1,13 +1,35 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import DashboardLayout from '@/components/dashboard/DashboardLayout';
+import WelcomeSection from '@/components/dashboard/WelcomeSection';
+import SkillVisualization from '@/components/dashboard/SkillVisualization';
+import LearningPathTimeline from '@/components/dashboard/LearningPathTimeline';
+import QuickActions from '@/components/dashboard/QuickActions';
+import CommunityPulse from '@/components/dashboard/CommunityPulse';
+import IndustryInsights from '@/components/dashboard/IndustryInsights';
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
+    <DashboardLayout>
+      <div className="space-y-6 animate-fade-in">
+        <WelcomeSection />
+        
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <div className="lg:col-span-2">
+            <SkillVisualization />
+          </div>
+          <div>
+            <QuickActions />
+          </div>
+        </div>
+        
+        <LearningPathTimeline />
+        
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <CommunityPulse />
+          <IndustryInsights />
+        </div>
       </div>
-    </div>
+    </DashboardLayout>
   );
 };
 

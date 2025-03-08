@@ -100,6 +100,11 @@ const SkillVisualization = () => {
     return skills.filter(skill => filters.includes(skill.category));
   };
 
+  // Helper function to get gradient class from color string
+  const getGradientClass = (colorString: string) => {
+    return colorString;
+  };
+
   return (
     <div className="dashboard-card overflow-hidden">
       <div className="p-6">
@@ -146,15 +151,12 @@ const SkillVisualization = () => {
           {getFilteredSkills().map((skill) => (
             <div 
               key={skill.id}
-              className="skill-node cursor-pointer bg-gradient-to-br hover:shadow-lg"
+              className={`skill-node cursor-pointer bg-gradient-to-br ${getGradientClass(skill.color)} hover:shadow-lg`}
               style={{
                 left: `${skill.x}px`,
                 top: `${skill.y}px`,
                 width: `${skill.size}px`,
                 height: `${skill.size}px`,
-                background: `linear-gradient(to bottom right, var(--tw-gradient-stops))`,
-                '--tw-gradient-from': skill.color.split(' ')[0].replace('from-', ''),
-                '--tw-gradient-to': skill.color.split(' ')[1].replace('to-', ''),
                 transform: `translate(-50%, -50%) scale(${hoveredSkill?.id === skill.id ? 1.2 : 1})`,
                 zIndex: hoveredSkill?.id === skill.id ? 10 : 1,
               }}

@@ -153,7 +153,7 @@ const activities = [
   },
   {
     category: 'learning',
-    message: 'You've reached 70% completion in React Advanced Patterns!',
+    message: 'You\'ve reached 70% completion in React Advanced Patterns!',
     time: 'Yesterday'
   }
 ];

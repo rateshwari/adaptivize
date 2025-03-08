@@ -1,13 +1,11 @@
-
 import { useEffect, useState } from 'react';
-import { Bell, Trending, Users, Clock, ExternalLink } from 'lucide-react';
+import { Bell, TrendingUp, Users, Clock, ExternalLink } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const RightSidebar = () => {
   const [mentorOnline, setMentorOnline] = useState(2);
   
   useEffect(() => {
-    // Simulate mentors coming online/offline
     const interval = setInterval(() => {
       setMentorOnline(prev => Math.max(1, Math.min(4, prev + (Math.random() > 0.5 ? 1 : -1))));
     }, 30000);
@@ -48,7 +46,7 @@ const RightSidebar = () => {
                 )}>
                   {activity.category === 'community' && <Users className="w-4 h-4" />}
                   {activity.category === 'learning' && <Clock className="w-4 h-4" />}
-                  {activity.category === 'industry' && <Trending className="w-4 h-4" />}
+                  {activity.category === 'industry' && <TrendingUp className="w-4 h-4" />}
                 </div>
                 <div>
                   <p className="text-sm text-gray-700 dark:text-gray-300">{activity.message}</p>
@@ -100,7 +98,7 @@ const RightSidebar = () => {
       {/* Industry Trends */}
       <div className="dashboard-card p-4">
         <div className="flex items-center space-x-2 mb-4">
-          <Trending className="w-4 h-4 text-primary" />
+          <TrendingUp className="w-4 h-4 text-primary" />
           <h3 className="font-semibold text-lg">Industry Trends</h3>
         </div>
         
@@ -129,7 +127,6 @@ const RightSidebar = () => {
   );
 };
 
-// Sample data
 const activities = [
   {
     category: 'community',

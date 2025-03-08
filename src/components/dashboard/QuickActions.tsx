@@ -1,6 +1,7 @@
 
 import { Lightbulb, ExternalLink, BookOpen, Users, PlayCircle } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { Link } from 'react-router-dom';
 
 const QuickActions = () => {
   const recommendations = [
@@ -10,7 +11,7 @@ const QuickActions = () => {
       description: 'Continue where you left off (65% complete)',
       icon: BookOpen,
       color: 'bg-blue-100 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400',
-      link: '/learning'
+      link: '/learning/content'
     },
     {
       id: 2,
@@ -42,8 +43,8 @@ const QuickActions = () => {
         
         <div className="grid grid-cols-1 gap-3">
           {recommendations.map((item) => (
-            <a 
-              href={item.link}
+            <Link 
+              to={item.link}
               key={item.id}
               className="group relative flex items-center p-4 rounded-lg bg-white/70 dark:bg-gray-800/70 border border-gray-100 dark:border-gray-700 hover:bg-white dark:hover:bg-gray-800 transition-all duration-300 hover-lift glow-effect"
             >
@@ -57,7 +58,7 @@ const QuickActions = () => {
               </div>
               
               <ExternalLink className="w-4 h-4 text-gray-400 dark:text-gray-500 group-hover:text-primary transition-colors" />
-            </a>
+            </Link>
           ))}
         </div>
       </div>

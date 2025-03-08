@@ -1,5 +1,6 @@
 
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import DashboardLayout from '@/components/dashboard/DashboardLayout';
 import { BookOpen, PlayCircle, FileText, CheckCircle2, Clock, Star, Filter, Search } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -167,9 +168,12 @@ const Learning = () => {
                           {expandedModule === course.id ? 'Hide modules' : 'Show modules'}
                         </button>
                         
-                        <button className="px-4 py-2 bg-primary text-white rounded-lg text-sm font-medium hover:bg-primary/90 transition-colors">
+                        <Link 
+                          to="/learning/content" 
+                          className="px-4 py-2 bg-primary text-white rounded-lg text-sm font-medium hover:bg-primary/90 transition-colors"
+                        >
                           Continue Learning
-                        </button>
+                        </Link>
                       </div>
                       
                       {expandedModule === course.id && (
@@ -198,9 +202,12 @@ const Learning = () => {
                                 </div>
                                 
                                 {module.current && (
-                                  <span className="text-xs bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-400 px-2 py-0.5 rounded-full">
-                                    Current
-                                  </span>
+                                  <Link 
+                                    to="/learning/content" 
+                                    className="text-xs bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-400 px-2 py-0.5 rounded-full hover:bg-blue-200 dark:hover:bg-blue-900/40 transition-colors"
+                                  >
+                                    Continue
+                                  </Link>
                                 )}
                               </div>
                             ))}
